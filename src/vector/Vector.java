@@ -76,7 +76,17 @@ public class Vector {
 
 
 	}
+	public int valor(int i){
+		int valor=vectores[i];
+		
+		return valor;
 
+	}
+	
+	public void setValor(int posicion, int valor){
+		vectores[posicion]=valor;
+
+	}
 
 	public Vector suma(Vector array2){
 		Vector suma =new Vector(vectores.length);
