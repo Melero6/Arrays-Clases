@@ -1,14 +1,14 @@
 package vector;
+
 import java.util.Scanner;
 
-public class Main4 {
+public class Main7 {
 
 	public static void main(String[] args) {
-
+		// TODO Auto-generated method stub
 		Scanner teclado = new Scanner(System.in);
-		int elementosM, elementosN, desde, hasta;
+		int elementosM, elementosN, desde, hasta, fila1,fila2;
 		Matriz matriz;
-		int[] mayor;
 
 		do{
 			System.out.println("ElementosN");
@@ -23,8 +23,9 @@ public class Main4 {
 		
 		matriz=new Matriz(elementosN, elementosM, desde, hasta);
 		matriz.mostrar();
-		matriz.mostrarMayor();
-		matriz.mostrarMenor();
 		
+
+
 	}
+
 }

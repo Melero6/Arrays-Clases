@@ -1,14 +1,14 @@
 package vector;
+
 import java.util.Scanner;
 
-public class Main4 {
+public class Main6 {
 
 	public static void main(String[] args) {
-
+		
 		Scanner teclado = new Scanner(System.in);
 		int elementosM, elementosN, desde, hasta;
 		Matriz matriz;
-		int[] mayor;
 
 		do{
 			System.out.println("ElementosN");
@@ -23,8 +23,10 @@ public class Main4 {
 		
 		matriz=new Matriz(elementosN, elementosM, desde, hasta);
 		matriz.mostrar();
-		matriz.mostrarMayor();
-		matriz.mostrarMenor();
 		
+		matriz.mostrarSumaFilas();
+		matriz.mostrarSumaColumnas();
+
 	}
+
 }

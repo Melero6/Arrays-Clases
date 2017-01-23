@@ -125,4 +125,19 @@ public class Vector {
 		return posicion;
 
 	}
+	
+	public void mostrarRepeticiones(Vector array2){
+		int repeticiones=0;
+		System.out.println("- Numero de repeticiones: ");
+		for (int i=0;i<vectores.length;i++){
+			System.out.print("Elemento "+i+" se repite ");
+			for(int j=0;j<vectores.length;j++){
+				if(vectores[i]==array2.vectores[j])
+					++repeticiones;
+			}
+			System.out.println(repeticiones+" veces.");
+			repeticiones=0;
+		}
+	}
+	
 }
