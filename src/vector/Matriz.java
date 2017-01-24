@@ -124,7 +124,23 @@ public class Matriz {
 		if(fila1>matrices[0].length||fila1<0||fila2>matrices[0].length||fila2<0)
 			System.out.println("Error - Esa fila no existe");
 		else{
+			int uno[] = new int[matrices.length];
+			int dos[] = new int[matrices.length];
 			
+//			 Matriz temp;
+//			 temp = new Matriz (matrices.length,2);
+
+				 for(int j=0;j<matrices.length;j++)
+					 uno[j]=matrices[fila1][j];
+				 
+				 for(int j=0;j<matrices.length;j++)
+					 dos[j]=matrices[fila2][j];
+				 
+				 for(int j=0;j<matrices.length;j++)
+					 matrices[fila1][j]=dos[j];
+				 
+				 for(int j=0;j<matrices.length;j++)
+					 matrices[fila2][j]=uno[j];
 		}
 		
 	}
