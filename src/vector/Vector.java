@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Vector {
 
 
-
 	private int[] vectores;
 
 
@@ -56,9 +55,10 @@ public class Vector {
 			if(vectores[i]>med)
 				System.out.print(" "+vectores[i]);
 		System.out.println();
+		
 		for (int i=0;i<vectores.length;i++)
 			if((float)vectores[i]==med)
-				llave=true;
+				llave=true; //Condicion para que entre al bucle de los iguales.
 		
 		if(llave){
 		System.out.print("Los numeros iguales a la media son:");
@@ -128,7 +128,7 @@ public class Vector {
 	}
 
 	public int posicionMenor(){
-		int menor=vectores[0],posicion=0;;
+		int menor=vectores[0],posicion=0;
 
 		for (int i=0;i<vectores.length;i++)
 			if (vectores[i]<menor){
@@ -140,8 +140,9 @@ public class Vector {
 
 	}
 	
-	public void mostrarRepeticiones(Vector array2){
+	public void mostrarRepeticiones(Vector array2){//numero de repeticiones de cada elemento del primer array en el segundo array
 		int repeticiones=0;
+		
 		System.out.println("- Numero de repeticiones: ");
 		for (int i=0;i<vectores.length;i++){
 			System.out.print("Elemento "+i+" se repite ");
