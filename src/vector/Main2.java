@@ -14,16 +14,16 @@ public class Main2 {
 			System.out.println("Indica la cantidad de elementos que quieres comparar:");
 			nElementos=teclado.nextInt();
 		}while(nElementos<=0);
-		System.out.println("Indica desde que numero");
+		System.out.println("Escribe el menor numero aleatorio que se puede generar en el primer array: ");
 		desde=teclado.nextInt();
-		System.out.println("Indica hasta que numero");
+		System.out.println("Escribe el mayor numero aleatorio que se puede generar en el primer array: ");
 		hasta=teclado.nextInt();
 
 		array1=new Vector(nElementos, desde, hasta);
 
-		System.out.println("Indica desde que numero");
+		System.out.println("Escribe el menor numero aleatorio que se puede generar en el segundo array: ");
 		desde=teclado.nextInt();
-		System.out.println("Indica hasta que numero");
+		System.out.println("Escribe el mayor numero aleatorio que se puede generar en el segundo array: ");
 		hasta=teclado.nextInt();
 
 		array2=new Vector(nElementos, desde, hasta);

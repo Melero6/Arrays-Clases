@@ -14,9 +14,9 @@ public class Main5 {
 			System.out.println("Indica la cantidad de elementos que quieres comparar:");
 			nElementos=teclado.nextInt();
 		}while(nElementos<=0);
-		System.out.println("Indica desde que numero");
+		System.out.println("Escribe el menor numero aleatorio que se puede generar: ");
 		desde=teclado.nextInt();
-		System.out.println("Indica hasta que numero");
+		System.out.println("Escribe el mayor numero aleatorio que se puede generar: ");
 		hasta=teclado.nextInt();
 		
 		System.out.print("Vector 1:");

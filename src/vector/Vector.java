@@ -39,6 +39,7 @@ public class Vector {
 
 	public void mostrarMedia(){
 		float med=media();
+		boolean llave=false;
 
 		System.out.print("La media es "+med);
 
@@ -54,7 +55,20 @@ public class Vector {
 		for (int i=0;i<vectores.length;i++)
 			if(vectores[i]>med)
 				System.out.print(" "+vectores[i]);
-
+		System.out.println();
+		for (int i=0;i<vectores.length;i++)
+			if((float)vectores[i]==med)
+				llave=true;
+		
+		if(llave){
+		System.out.print("Los numeros iguales a la media son:");
+		for (int i=0;i<vectores.length;i++)
+			if((float)vectores[i]==med)
+				System.out.print(" "+vectores[i]);
+		}
+		else
+			System.out.println("No hay numeros iguales a la media.");
+		
 	}
 
 	public float media(){

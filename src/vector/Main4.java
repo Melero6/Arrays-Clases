@@ -16,9 +16,9 @@ public class Main4 {
 			System.out.println("ElementosM");
 			elementosM=teclado.nextInt();
 		}while(elementosM<=0||elementosN<=0);
-		System.out.println("desde");
+		System.out.println("Escribe el menor numero aleatorio que se puede generar: ");
 		desde=teclado.nextInt();
-		System.out.println("hasta");
+		System.out.println("Escribe el mayor numero aleatorio que se puede generar: ");
 		hasta=teclado.nextInt();
 		
 		matriz=new Matriz(elementosN, elementosM, desde, hasta);
