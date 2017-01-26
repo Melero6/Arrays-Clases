@@ -7,7 +7,7 @@ public class Main8 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner teclado = new Scanner(System.in);
-		int elementosM, elementosN, desde, hasta, fila1,fila2;
+		int elementosM, elementosN, desde, hasta, filaAlumno,columnaAsignatura;
 		Matriz matriz;
 
 		do{
@@ -23,6 +23,14 @@ public class Main8 {
 		matriz=new Matriz(elementosN, elementosM, desde, hasta);
 		matriz.mostrar();
 	
+		
+		System.out.print("Indica de que alumno quieres calcular la media de notas (Min=0 Max="+elementosN+") :");
+		filaAlumno=teclado.nextInt();
+		matriz.mostrarMediaFila(filaAlumno);
+		System.out.print("Indica de que asignatura quieres calcular la media de notas (Min=0 Max="+elementosM+") :");
+		columnaAsignatura=teclado.nextInt();
+		matriz.mostrarMediaColumna(columnaAsignatura);
+		
 	}
 
 }

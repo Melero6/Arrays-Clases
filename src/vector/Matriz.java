@@ -33,7 +33,7 @@ public class Matriz {
 	}
 
 	public void mostrar(){
-		
+
 		System.out.println("Lista de valores de la matriz: ");
 		for (int i=0;i<matrices.length;i++){
 
@@ -99,52 +99,105 @@ public class Matriz {
 			System.out.print("Fila "+i+" : ");
 			for (int j=0;j<matrices[0].length;j++){
 				filas+=matrices[i][j];
-				}
+			}
 			System.out.println(filas);
 			filas=0;
-			}
+		}
 		System.out.println();
-		}
-	
-	public void mostrarSumaColumnas(){
-	int columnas=0;
-	System.out.println("Suma de columnas: ");
-	for (int i=0;i<matrices.length;i++){
-		System.out.print("Columna "+i+" : ");
-		for (int j=0;j<matrices[0].length;j++){
-			columnas+=matrices[j][i];
-			}
-		System.out.println(columnas);
-		columnas=0;
-		}
-	System.out.println();
 	}
-	
+
+	public void mostrarSumaColumnas(){
+		int columnas=0;
+		System.out.println("Suma de columnas: ");
+		for (int i=0;i<matrices.length;i++){
+			System.out.print("Columna "+i+" : ");
+			for (int j=0;j<matrices[0].length;j++){
+				columnas+=matrices[j][i];
+			}
+			System.out.println(columnas);
+			columnas=0;
+		}
+		System.out.println();
+	}
+
 	public void cambioFilas(int fila1,int fila2){
 		if(fila1>matrices[0].length||fila1<0||fila2>matrices[0].length||fila2<0)
 			System.out.println("Error - Esa fila no existe");
 		else{
 			int uno[] = new int[matrices.length];
 			int dos[] = new int[matrices.length];
-			
-//			 Matriz temp;
-//			 temp = new Matriz (matrices.length,2);
 
-				 for(int j=0;j<matrices.length;j++)
-					 uno[j]=matrices[fila1][j];
-				 
-				 for(int j=0;j<matrices.length;j++)
-					 dos[j]=matrices[fila2][j];
-				 
-				 for(int j=0;j<matrices.length;j++)
-					 matrices[fila1][j]=dos[j];
-				 
-				 for(int j=0;j<matrices.length;j++)
-					 matrices[fila2][j]=uno[j];
+
+			for(int j=0;j<matrices.length;j++)
+				uno[j]=matrices[fila1][j];
+
+			for(int j=0;j<matrices.length;j++)
+				dos[j]=matrices[fila2][j];
+
+			for(int j=0;j<matrices.length;j++)
+				matrices[fila1][j]=dos[j];
+
+			for(int j=0;j<matrices.length;j++)
+				matrices[fila2][j]=uno[j];
 		}
-		
 	}
 	
+	public void mostrarMediaFila(int fila){  //Muestra la media de una fila indicada por el parametro
+		if(fila>matrices[0].length||fila<0)
+			System.out.println("Error - Esa fila no existe");
+		else{
+			float media=0;
+
+			for(int j=0;j<matrices.length;j++)
+				media+=matrices[fila][j];
+
+			media=media/matrices.length;
+			System.out.println("La media del alumno "+fila+" es: "+media);
+
+		}
+	}
+	
+	public void mostrarMediaColumna(int columna){ //Muestra la media de una columna indicada por el parametro
+		if(columna>matrices[0].length||columna<0)
+			System.out.println("Error - Esa columna no existe");
+		else{
+			float media=0;
+
+			for(int j=0;j<matrices.length;j++)
+				media+=matrices[j][columna];
+
+			media=media/matrices.length;
+			System.out.println("La media de la asignatura "+columna+" es: "+media);
+
+		}
+	}
+	
+	public float devolverMediaFila(int fila){  //devuelve la media de una fila indicada por parametro
+		float media=0;
+		if(fila>matrices[0].length||fila<0)
+			System.out.println("Error - Esa fila no existe");
+		else{
+			for(int j=0;j<matrices.length;j++)
+				media+=matrices[fila][j];
+
+			media=media/matrices.length;	 
+		}
+		return media;
+	}
+	
+	public float devolverMediaColumna(int columna){ //devuelve la media de una columna indicada por parametro
+
+		float media=0;
+		if(columna>matrices[0].length||columna<0)
+			System.out.println("Error - Esa columna no existe");
+		else{
+			for(int j=0;j<matrices.length;j++)
+				media+=matrices[j][columna];
+
+			media=media/matrices.length;
+		}
+		return media;
+	}
 }
 
 
