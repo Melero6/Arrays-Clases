@@ -11,9 +11,9 @@ public class Main6 {
 		Matriz matriz;
 
 		do{
-			System.out.println("ElementosN");
+			System.out.println("Escribe el numero de filas: ");
 			elementosN=teclado.nextInt();
-			System.out.println("ElementosM");
+			System.out.println("Escribe el numero de columnas: ");
 			elementosM=teclado.nextInt();
 		}while(elementosM<=0||elementosN<=0);
 		System.out.println("Escribe el menor numero aleatorio que se puede generar: ");
