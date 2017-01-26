@@ -8,6 +8,7 @@ public class Main6 {
 		
 		Scanner teclado = new Scanner(System.in);
 		int elementosM, elementosN, desde, hasta;
+		boolean reales=true;
 		Matriz matriz;
 
 		do{
@@ -21,11 +22,11 @@ public class Main6 {
 		System.out.println("Escribe el mayor numero aleatorio que se puede generar: ");
 		hasta=teclado.nextInt();
 		
-		matriz=new Matriz(elementosN, elementosM, desde, hasta);
-		matriz.mostrar();
+		matriz=new Matriz(elementosN, elementosM, desde, hasta, reales);
+		matriz.mostrarFloat();
 		
-		matriz.mostrarSumaFilas();
-		matriz.mostrarSumaColumnas();
+		matriz.mostrarSumaFilasFloat();
+		matriz.mostrarSumaColumnasFloat();
 
 	}
 

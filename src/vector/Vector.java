@@ -33,9 +33,23 @@ public class Vector {
 		vectores=new int[n];
 		for (int i=0;i<n;i++)
 			vectores[i]= (int)(Math.random()*(hasta-desde+1)+desde);
-
+		
+		
 	}
+	public Vector(int n, boolean baraja){
 
+		vectores=new int[n];
+		for (int i=1;i<=n-1;i++){
+			if(i%10==7)
+				vectores[i]= 65;
+			else if(i%10==8)
+				vectores[i]= 66;
+			else if(i%10==9)
+				vectores[i]= 67;
+			else 
+				vectores[i]= i%10;
+		}
+	}
 	public void mostrarMedia(){
 		float med=media();
 		boolean llave=false;
@@ -154,5 +168,75 @@ public class Vector {
 			repeticiones=0;
 		}
 	}
+	public void mostrarBaraja(){
+
+		for (int i=0;i<vectores.length;i++){
+			if(i>=0&&i<=9)
+				System.out.print(" OROS-");
+			if(i>=10&&i<=19)
+				System.out.print(" COPAS-");
+			if(i>=20&&i<=29)
+				System.out.print(" ESPADAS-");
+			if(i>=30&&i<=39)
+				System.out.print(" BASTOS-");
+			
+			if(i%10==7)
+				System.out.print((char)vectores[i]);
+			else if(i%10==8)
+				System.out.print((char)vectores[i]);
+			else if(i%10==9)
+				System.out.print((char)vectores[i]);
+			else
+			System.out.print(vectores[i]);
+		}
+		System.out.println();
+
+
+	}
+	public void repartirBaraja(){
+		int	posicion=0;
+		for(int i=0; i<vectores.length;i++){
+			posicion=(int)(Math.random()*(39+1));
+			if(posicion>=0&&posicion<=9)
+				System.out.print(" OROS-");
+			if(posicion>=10&&posicion<=19)
+				System.out.print(" COPAS-");
+			if(posicion>=20&&posicion<=29)
+				System.out.print(" ESPADAS-");
+			if(posicion>=30&&posicion<=39)
+				System.out.print(" BASTOS-");
+			if(posicion%10==7)
+				System.out.print((char)vectores[posicion]);
+			else if(posicion%10==8)
+				System.out.print((char)vectores[posicion]);
+			else if(posicion%10==9)
+				System.out.print((char)vectores[posicion]);
+			else
+			System.out.print(vectores[posicion]);
+		}
+	}
+	public void dameCarta(){
+		int	posicion=0;
+
+			posicion=(int)(Math.random()*(39+1));
+			if(posicion>=0&&posicion<=9)
+				System.out.print(" OROS-");
+			if(posicion>=10&&posicion<=19)
+				System.out.print(" COPAS-");
+			if(posicion>=20&&posicion<=29)
+				System.out.print(" ESPADAS-");
+			if(posicion>=30&&posicion<=39)
+				System.out.print(" BASTOS-");
+			if(posicion%10==7)
+				System.out.print((char)vectores[posicion]);
+			else if(posicion%10==8)
+				System.out.print((char)vectores[posicion]);
+			else if(posicion%10==9)
+				System.out.print((char)vectores[posicion]);
+			else
+			System.out.print(vectores[posicion]);
+			System.out.println();
+		}
+	}
 	
-}
+

@@ -6,6 +6,7 @@ public class Matriz {
 
 
 	private int[][] matrices;
+	private float[][] matricesfloat;
 
 	public int[][] getMatrizes() {
 		return matrices;
@@ -20,10 +21,19 @@ public class Matriz {
 
 
 	}
-	public Matriz(int n, int m,int desde, int hasta) {
+	public Matriz(int n, int m,int desde, int hasta, boolean reales) { //crear matrices con numeros reales
+
+		matricesfloat=new float[n][m];
+
+
+		for (int i=0;i<n;i++){
+			for (int j=0;j<m;j++)
+				matricesfloat[i][j]= (float)(Math.random()*(hasta-desde+1)+desde);
+		}
+	}
+	public Matriz(int n, int m,int desde, int hasta) { //crear matrices con numero enteros
 
 		matrices=new int[n][m];
-
 
 
 		for (int i=0;i<n;i++){
@@ -32,7 +42,7 @@ public class Matriz {
 		}
 	}
 
-	public void mostrar(){
+	public void mostrarInt(){ //mostrar matrices de enteros
 
 		System.out.println("Lista de valores de la matriz: ");
 		for (int i=0;i<matrices.length;i++){
@@ -47,7 +57,21 @@ public class Matriz {
 		System.out.println();
 
 	}
+	public void mostrarFloat(){ //mostrar matrices de reales
 
+		System.out.println("Lista de valores de la matriz: ");
+		for (int i=0;i<matricesfloat.length;i++){
+
+			for (int j=0;j<matricesfloat[0].length;j++)
+				System.out.printf(" %4.2f",matricesfloat[i][j]);
+
+
+			System.out.println();
+		}
+
+		System.out.println();
+
+	}
 	public void mostrarMayor(){
 		int[] mayor = {0,0};
 
@@ -92,35 +116,63 @@ public class Matriz {
 		System.out.println();
 
 	}
-	public void mostrarSumaFilas(){
+	public void mostrarSumaFilasInt(){ //suma filas de enteros
 		int filas=0;
 		System.out.println("Suma de filas: ");
 		for (int i=0;i<matrices.length;i++){
 			System.out.print("Fila "+i+" : ");
-			for (int j=0;j<matrices[0].length;j++){
+			for (int j=0;j<matrices[0].length;j++)
 				filas+=matrices[i][j];
-			}
+			
 			System.out.println(filas);
 			filas=0;
 		}
 		System.out.println();
 	}
 
-	public void mostrarSumaColumnas(){
+	public void mostrarSumaColumnasInt(){//suma columnas de enteros
 		int columnas=0;
 		System.out.println("Suma de columnas: ");
-		for (int i=0;i<matrices.length;i++){
+		for (int i=0;i<matrices[0].length;i++){
 			System.out.print("Columna "+i+" : ");
-			for (int j=0;j<matrices[0].length;j++){
+			for (int j=0;j<matrices.length;j++)
 				columnas+=matrices[j][i];
-			}
+			
+			System.out.println(columnas);
+			columnas=0;
+		}
+		System.out.println();
+	}
+	
+	public void mostrarSumaFilasFloat(){//suma filas de floats
+		float filas=0;
+		System.out.println("Suma de filas: ");
+		for (int i=0;i<matricesfloat.length;i++){
+			System.out.print("Fila "+i+" : ");
+			for (int j=0;j<matricesfloat[0].length;j++)
+				filas+=matricesfloat[i][j];
+			
+			System.out.println(filas);
+			filas=0;
+		}
+		System.out.println();
+	}
+
+	public void mostrarSumaColumnasFloat(){//suma columnas de floats
+		float columnas=0;
+		System.out.println("Suma de columnas: ");
+		for (int i=0;i<matricesfloat[0].length;i++){
+			System.out.print("Columna "+i+" : ");
+			for (int j=0;j<matricesfloat.length;j++)
+				columnas+=matricesfloat[j][i];
+			
 			System.out.println(columnas);
 			columnas=0;
 		}
 		System.out.println();
 	}
 
-	public void cambioFilas(int fila1,int fila2){
+	public void cambioFilas(int fila1,int fila2){ //intercambia filas en una matriz
 		if(fila1>matrices[0].length||fila1<0||fila2>matrices[0].length||fila2<0)
 			System.out.println("Error - Esa fila no existe");
 		else{

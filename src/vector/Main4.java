@@ -22,7 +22,7 @@ public class Main4 {
 		hasta=teclado.nextInt();
 		
 		matriz=new Matriz(elementosN, elementosM, desde, hasta);
-		matriz.mostrar();
+		matriz.mostrarInt();
 		matriz.mostrarMayor();
 		matriz.mostrarMenor();
 		

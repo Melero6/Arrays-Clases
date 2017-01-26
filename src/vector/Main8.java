@@ -21,7 +21,7 @@ public class Main8 {
 		hasta=10;
 		
 		matriz=new Matriz(elementosN, elementosM, desde, hasta);
-		matriz.mostrar();
+		matriz.mostrarInt();
 	
 		
 		System.out.print("Indica de que alumno quieres calcular la media de notas (Min=0 Max="+elementosN+") :");

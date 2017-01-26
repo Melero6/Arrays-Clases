@@ -23,7 +23,7 @@ public class Main7 {
 		
 		
 		matriz=new Matriz(elementosN, elementosM, desde, hasta);
-		matriz.mostrar();
+		matriz.mostrarInt();
 		do{
 		System.out.println("¿Que fila quieres cambiar? (Max= "+(elementosM-1)+")");
 		fila1=teclado.nextInt();
@@ -32,7 +32,7 @@ public class Main7 {
 		}while(fila1>(elementosM-1)||fila1<0||fila2>(elementosM-1)||fila2<0);
 		matriz.cambioFilas(fila1, fila2);
 		System.out.println();
-		matriz.mostrar();
+		matriz.mostrarInt();
 
 
 	}
