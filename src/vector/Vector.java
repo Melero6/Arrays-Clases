@@ -1,3 +1,4 @@
+
 package vector;
 
 import java.util.Arrays;
@@ -39,15 +40,15 @@ public class Vector {
 	public Vector(int n, boolean baraja){
 
 		vectores=new int[n];
-		for (int i=1;i<=n-1;i++){
+		for (int i=0;i<n;i++){
 			if(i%10==7)
 				vectores[i]= 65;
 			else if(i%10==8)
 				vectores[i]= 66;
 			else if(i%10==9)
 				vectores[i]= 67;
-			else 
-				vectores[i]= i%10;
+			else
+				vectores[i]= (i%10)+1;
 		}
 	}
 	public void mostrarMedia(){
