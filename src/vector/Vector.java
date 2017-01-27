@@ -195,9 +195,24 @@ public class Vector {
 
 	}
 	public void repartirBaraja(){
-		int	posicion=0;
-		for(int i=0; i<vectores.length;i++){
+		int	posicion=0, contadorVectorRepeticion=0;
+
+		Vector repeticiones;
+		repeticiones=new Vector(40,-1);
+		for(int i=0; i<vectores.length;i++){	
 			posicion=(int)(Math.random()*(39+1));
+			repeticiones.vectores[i]=posicion;
+			while(contadorVectorRepeticion<i){ //comprueba si el numero generado repite la poscion de la carta en la baraja
+				if(repeticiones.vectores[contadorVectorRepeticion]==posicion){
+					posicion=(int)(Math.random()*(39+1));
+					contadorVectorRepeticion=0;
+				}	
+				else{
+					repeticiones.vectores[i]=posicion;
+					contadorVectorRepeticion++;
+				}
+			}
+			//imprime la carta
 			if(posicion>=0&&posicion<=9)
 				System.out.print(" OROS-");
 			if(posicion>=10&&posicion<=19)
@@ -214,11 +229,12 @@ public class Vector {
 				System.out.print((char)vectores[posicion]);
 			else
 			System.out.print(vectores[posicion]);
+			contadorVectorRepeticion=0;
 		}
 	}
 	public void dameCarta(){
 		int	posicion=0;
-
+		
 			posicion=(int)(Math.random()*(39+1));
 			if(posicion>=0&&posicion<=9)
 				System.out.print(" OROS-");
@@ -238,6 +254,7 @@ public class Vector {
 			System.out.print(vectores[posicion]);
 			System.out.println();
 		}
+	
 	}
 	
 
